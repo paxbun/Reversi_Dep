@@ -18,9 +18,6 @@
     <ClCompile Include="ReversiNative.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReversiNative.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReversiNative.h">
