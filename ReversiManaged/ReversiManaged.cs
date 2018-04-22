@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+
+using System;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace Freiyer.Games
+namespace Freiyer.Sandbox
 {
     public enum PieceState : byte
     {

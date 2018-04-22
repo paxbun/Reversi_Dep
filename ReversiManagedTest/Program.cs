@@ -1,5 +1,5 @@
 ﻿using System;
-using Freiyer.Games;
+using Freiyer.Sandbox;
 
 namespace ReversiManagedTest
 {
@@ -38,7 +38,7 @@ namespace ReversiManagedTest
                 else if (i == 'S' && j == 'S')
                 {
                     if (!reversi.SkipTurn())
-                        Console.WriteLine("Cannot skip.");
+                        Console.WriteLine("Cannot skip the turn.");
                     else
                         Console.WriteLine("Skipped.");
                 }
