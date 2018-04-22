@@ -30,7 +30,7 @@ namespace ReversiManagedTest
                 }
                 else if (i == 'Y' && j == 'Y')
                 {
-                    if (!reversi.Undo())
+                    if (!reversi.Redo())
                         Console.WriteLine("Cannot redo.");
                     else
                         Console.WriteLine("Redid.");
