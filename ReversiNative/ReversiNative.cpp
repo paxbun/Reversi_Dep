@@ -124,7 +124,6 @@ namespace Freiyer
 		}
 
 		// Get available spaces count
-
 		int Reversi::GetAvailableCount()
 		{
 			return _AvailableCount;
@@ -472,15 +471,11 @@ namespace Freiyer
 
 		bool Reversi::PlacePiece(int pi, int pj)
 		{
-			// If the program attempts to place a piece on the outside of the board,
-			// the function throws an exception.
 			if (pi >= SIZE || pj >= SIZE || pi < 0 || pj < 0 || _BlankCount == 0)
 			{
 				return false;
 			}
 
-			// If the program attempts to place a piece on an invalid square,
-			// the function throws an exception.
 			if (_CurrentPieceState[pi * SIZE + pj] != PieceState::PieceAvailable) {
 				return false;
 			}
