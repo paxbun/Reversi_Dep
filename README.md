@@ -3,7 +3,7 @@
 [ko-kr](README.ko-kr.md): 한국어
 
 # Reversi
-Simple Reversi Library for Windows 10. Free to use under any conditions.
+Simple Reversi Library for Windows 10.
 
 ## Getting started ([C++ API](CPPAPI.md) / [C API](CAPI.md) / [C# API](CSAPI.md))
 The library supports C++, C and C#.
@@ -16,5 +16,5 @@ The core of the library. The project includes the actual Reversi code. ReversiMa
 This is an example of an application using ReversiNative. In the project are two files with the same name but different file extensions(.c and .cpp). Two files do exactly the same thing.
 ### ReversiManaged (C#)
 An interop using ReversiNative.
-### ReversiManagedText
+### ReversiManagedTest (C#)
 This is an example of an application using ReversiManaged.
