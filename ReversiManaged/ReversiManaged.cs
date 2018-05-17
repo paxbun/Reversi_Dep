@@ -9,8 +9,8 @@ namespace Freiyer.Sandbox
     public enum PieceState : byte
     {
         BlankPiece = 0,
-        LightPiece,
         DarkPiece,
+        LightPiece,
         PieceAvailable,
     }
 

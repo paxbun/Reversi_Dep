@@ -25,8 +25,8 @@ namespace Freiyer
 			enum class PieceState : unsigned char
 			{
 				BlankPiece = 0,
-				LightPiece,
 				DarkPiece,
+				LightPiece,
 				PieceAvailable,
 			};
 
