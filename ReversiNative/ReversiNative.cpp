@@ -534,7 +534,7 @@ namespace Freiyer
 								break;
 							}
 						}
-						if (otherSidePiece != -1) {
+						if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 							_CurrentPieceState[otherSidePiece * SIZE + j] = PieceState::PieceAvailable;
 							otherSidePiece = -1;
 						}
@@ -549,7 +549,7 @@ namespace Freiyer
 								break;
 							}
 						}
-						if (otherSidePiece != -1) {
+						if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 							_CurrentPieceState[otherSidePiece * SIZE + j] = PieceState::PieceAvailable;
 							otherSidePiece = -1;
 						}
@@ -564,7 +564,7 @@ namespace Freiyer
 								break;
 							}
 						}
-						if (otherSidePiece != -1) {
+						if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 							_CurrentPieceState[i * SIZE + otherSidePiece] = PieceState::PieceAvailable;
 							otherSidePiece = -1;
 						}
@@ -579,7 +579,7 @@ namespace Freiyer
 								break;
 							}
 						}
-						if (otherSidePiece != -1) {
+						if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 							_CurrentPieceState[i * SIZE + otherSidePiece] = PieceState::PieceAvailable;
 							otherSidePiece = -1;
 						}
@@ -601,7 +601,7 @@ namespace Freiyer
 								}
 								k++;
 							}
-							if (otherSidePiece != -1) {
+							if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 								_CurrentPieceState[(i - otherSidePiece) * SIZE + j - otherSidePiece] = PieceState::PieceAvailable;
 								otherSidePiece = -1;
 							}
@@ -624,7 +624,7 @@ namespace Freiyer
 								}
 								k++;
 							}
-							if (otherSidePiece != -1) {
+							if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 								_CurrentPieceState[(i - otherSidePiece) * SIZE + j + otherSidePiece] = PieceState::PieceAvailable;
 								otherSidePiece = -1;
 							}
@@ -647,7 +647,7 @@ namespace Freiyer
 								}
 								k++;
 							}
-							if (otherSidePiece != -1) {
+							if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 								_CurrentPieceState[(i + otherSidePiece) * SIZE + j - otherSidePiece] = PieceState::PieceAvailable;
 								otherSidePiece = -1;
 							}
@@ -670,7 +670,7 @@ namespace Freiyer
 								}
 								k++;
 							}
-							if (otherSidePiece != -1) {
+							if (otherSidePiece != -1 && otherSidePiece != SIZE) {
 								_CurrentPieceState[(i + otherSidePiece) * SIZE + j + otherSidePiece] = PieceState::PieceAvailable;
 								otherSidePiece = -1;
 							}
