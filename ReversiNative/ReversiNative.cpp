@@ -554,7 +554,7 @@ namespace Freiyer
 							otherSidePiece = -1;
 						}
 						// Check the left
-						for (int k = i - 1; k >= 0; k--) {
+						for (int k = j - 1; k >= 0; k--) {
 							if (_CurrentPieceState[i * SIZE + k] == PieceState::BlankPiece)
 								break;
 							else if (_CurrentPieceState[i * SIZE + k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
@@ -569,7 +569,7 @@ namespace Freiyer
 							otherSidePiece = -1;
 						}
 						// Check the right
-						for (int k = i + 1; k < SIZE; k++) {
+						for (int k = j + 1; k < SIZE; k++) {
 							if (_CurrentPieceState[i * SIZE + k] == PieceState::BlankPiece)
 								break;
 							else if (_CurrentPieceState[i * SIZE + k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))

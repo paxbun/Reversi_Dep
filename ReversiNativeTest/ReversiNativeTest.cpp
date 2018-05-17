@@ -1,4 +1,4 @@
-﻿#include "ReversiNative.h"
+﻿#include "..\ReversiNative\ReversiNative.h"
 
 #include <iostream>
 #include <sstream>
