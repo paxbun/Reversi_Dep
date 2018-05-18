@@ -7,6 +7,9 @@
 #define SIZE 8
 #define MAXTURN 121
 
+#define ISBLANK(k) ((k) == Freiyer::Sandbox::Reversi::PieceState::BlankPiece || (k) == Freiyer::Sandbox::Reversi::PieceState::PieceAvailable)
+#define POS(i, j) ((i) * SIZE + (j))
+
 namespace Freiyer
 {
 	namespace Sandbox
@@ -525,7 +528,7 @@ namespace Freiyer
 					if (_CurrentPieceState[i * SIZE + j] == (_CurrentPlayer == Player::Dark ? PieceState::LightPiece : PieceState::DarkPiece)) {
 						// Check the up
 						for (int k = i - 1; k >= 0; k--) {
-							if (_CurrentPieceState[k * SIZE + j] == PieceState::BlankPiece)
+							if (ISBLANK(_CurrentPieceState[POS(k, j)]))
 								break;
 							else if (_CurrentPieceState[k * SIZE + j] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 								otherSidePiece = k - 1;
@@ -540,7 +543,7 @@ namespace Freiyer
 						}
 						// Check the down
 						for (int k = i + 1; k < SIZE; k++) {
-							if (_CurrentPieceState[k * SIZE + j] == PieceState::BlankPiece)
+							if (ISBLANK(_CurrentPieceState[POS(k, j)]))
 								break;
 							else if (_CurrentPieceState[k * SIZE + j] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 								otherSidePiece = k + 1;
@@ -555,7 +558,7 @@ namespace Freiyer
 						}
 						// Check the left
 						for (int k = j - 1; k >= 0; k--) {
-							if (_CurrentPieceState[i * SIZE + k] == PieceState::BlankPiece)
+							if (ISBLANK(_CurrentPieceState[POS(i, k)]))
 								break;
 							else if (_CurrentPieceState[i * SIZE + k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 								otherSidePiece = k - 1;
@@ -570,7 +573,7 @@ namespace Freiyer
 						}
 						// Check the right
 						for (int k = j + 1; k < SIZE; k++) {
-							if (_CurrentPieceState[i * SIZE + k] == PieceState::BlankPiece)
+							if (ISBLANK(_CurrentPieceState[POS(i, k)]))
 								break;
 							else if (_CurrentPieceState[i * SIZE + k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 								otherSidePiece = k + 1;
@@ -591,7 +594,7 @@ namespace Freiyer
 									otherSidePiece = -1;
 									break;
 								}
-								else if (_CurrentPieceState[(i - k) * SIZE + j - k] == PieceState::BlankPiece)
+								else if (ISBLANK(_CurrentPieceState[POS(i - k, j - k)]))
 									break;
 								else if (_CurrentPieceState[(i - k) * SIZE + j - k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 									otherSidePiece = k + 1;
@@ -614,7 +617,7 @@ namespace Freiyer
 									otherSidePiece = -1;
 									break;
 								}
-								else if (_CurrentPieceState[(i - k) * SIZE + j + k] == PieceState::BlankPiece)
+								else if (ISBLANK(_CurrentPieceState[POS(i - k, j + k)]))
 									break;
 								else if (_CurrentPieceState[(i - k) * SIZE + j + k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 									otherSidePiece = k + 1;
@@ -637,7 +640,7 @@ namespace Freiyer
 									otherSidePiece = -1;
 									break;
 								}
-								else if (_CurrentPieceState[(i + k) * SIZE + j - k] == PieceState::BlankPiece)
+								else if (ISBLANK(_CurrentPieceState[POS(i + k, j - k)]))
 									break;
 								else if (_CurrentPieceState[(i + k) * SIZE + j - k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 									otherSidePiece = k + 1;
@@ -660,7 +663,7 @@ namespace Freiyer
 									otherSidePiece = -1;
 									break;
 								}
-								else if (_CurrentPieceState[(i + k) * SIZE + j + k] == PieceState::BlankPiece)
+								else if (ISBLANK(_CurrentPieceState[POS(i + k, j + k)]))
 									break;
 								else if (_CurrentPieceState[(i + k) * SIZE + j + k] == (_CurrentPlayer == Player::Dark ? PieceState::DarkPiece : PieceState::LightPiece))
 									otherSidePiece = k + 1;
@@ -691,11 +694,11 @@ namespace Freiyer
 			{
 				for (int j = 0; j < SIZE; j++)
 				{
-					if (_CurrentPieceState[i * SIZE + j] == PieceState::LightPiece)
+					if (_CurrentPieceState[POS(i, j)] == PieceState::LightPiece)
 						_LightCount++;
-					else if (_CurrentPieceState[i * SIZE + j] == PieceState::DarkPiece)
+					else if (_CurrentPieceState[POS(i, j)] == PieceState::DarkPiece)
 						_DarkCount++;
-					else if (_CurrentPieceState[i * SIZE + j] == PieceState::PieceAvailable)
+					else if (_CurrentPieceState[POS(i, j)] == PieceState::PieceAvailable)
 					{
 						_AvailableCount++;
 						_BlankCount++;
